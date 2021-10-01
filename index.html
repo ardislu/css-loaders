@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    body {
+      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .skeleton-line {
+      height: 1rem;
+      background: linear-gradient(90deg, black, white, black);
+      background-size: 200%;
+      animation: 1s linear infinite alternate shimmer;
+    }
+
+    @keyframes shimmer {
+      from {
+        background-position-x: 0%;
+      }
+
+      to {
+        background-position-x: 100%;
+      }
+    }
+
+    .inline-spinner {
+      display: inline-block;
+      box-sizing: border-box;
+      height: 1em;
+      width: 1em;
+      border: 0.25em solid transparent;
+      border-top: 0.25em solid black;
+      border-radius: 50%;
+      animation: 1s infinite spin;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <link rel="icon" href="data:;base64,=">
+  <title>css-loaders</title>
+</head>
+
+<body>
+  <header>
+    <h1>css-loaders</h1>
+  </header>
+
+  <main>
+    <p>A block skeleton line loader:</p>
+    <div class="skeleton-line"></div>
+
+    <h1>
+      <span class="inline-spinner"></span>Some h1 text next to an inline-spinner<span class="inline-spinner"></span>
+    </h1>
+
+    <p>
+      <span class="inline-spinner"></span>Some p text next to an inline-spinner<span class="inline-spinner"></span>
+    </p>
+  </main>
+</body>
+
+</html>
