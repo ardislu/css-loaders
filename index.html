@@ -18,12 +18,12 @@
     }
 
     main {
-      max-width: 720px;
-      margin: 0 auto;
+      inline-size: min(100% - 2rem, 720px);
+      margin-inline: auto;
     }
 
     .skeleton-line {
-      height: 1rem;
+      block-size: 1rem;
       background: linear-gradient(90deg, black, white, black);
       background-size: 200%;
       animation: 1s linear infinite alternate shimmer;
@@ -42,10 +42,10 @@
     .inline-spinner {
       display: inline-block;
       box-sizing: border-box;
-      height: 1em;
-      width: 1em;
+      block-size: 1em;
+      inline-size: 1em;
       border: 0.25em solid transparent;
-      border-top: 0.25em solid black;
+      border-block-start: 0.25em solid black;
       border-radius: 50%;
       animation: 1s infinite spin;
     }
