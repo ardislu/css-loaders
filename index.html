@@ -24,18 +24,14 @@
 
     .skeleton-line {
       block-size: 1rem;
-      background: linear-gradient(90deg, black, white, black);
-      background-size: 200%;
-      animation: 1s linear infinite alternate shimmer;
+      margin-block: 1rem;
+      animation: shimmer 1s alternate infinite;
+      background: hsl(0deg 0% 50%);
     }
 
     @keyframes shimmer {
-      from {
-        background-position-x: 0%;
-      }
-
-      to {
-        background-position-x: 100%;
+      100% {
+        background: hsl(0deg 0% 85%);
       }
     }
 
