@@ -35,6 +35,32 @@
       }
     }
 
+    .skeleton-inline-container {
+      display: flex;
+    }
+
+    .skeleton-inline-square {
+      inline-size: 1em;
+      block-size: 1em;
+      animation: shimmer 1s alternate infinite;
+      background: hsl(0deg 0% 50%);
+    }
+
+    .skeleton-inline-circle {
+      inline-size: 1em;
+      block-size: 1em;
+      border-radius: 1em;
+      animation: shimmer 1s alternate infinite;
+      background: hsl(0deg 0% 50%);
+    }
+
+    .skeleton-inline-line {
+      flex-grow: 1;
+      block-size: 1em;
+      animation: shimmer 1s alternate infinite;
+      background: hsl(0deg 0% 50%);
+    }
+
     .inline-spinner {
       display: inline-block;
       box-sizing: border-box;
@@ -68,6 +94,13 @@
   <main>
     <p>A block skeleton line loader:</p>
     <div class="skeleton-line"></div>
+
+    <p>An inline skeleton square, circle, and line loader:</p>
+    <div class="skeleton-inline-container">
+      <span class="skeleton-inline-square"></span>
+      <span class="skeleton-inline-circle"></span>
+      <span class="skeleton-inline-line"></span>
+    </div>
 
     <h1>
       <span class="inline-spinner"></span>Some h1 text next to an inline-spinner<span class="inline-spinner"></span>
