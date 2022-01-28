@@ -77,6 +77,30 @@
         transform: rotate(360deg);
       }
     }
+
+    .gradient-divider {
+      block-size: 0.5rem;
+      inline-size: 40%;
+      background-image: linear-gradient(90deg,
+          hsl(215deg 100% 35%) 0%,
+          hsl(222deg 61% 46%) 21%,
+          hsl(224deg 52% 52%) 30%,
+          hsl(225deg 54% 57%) 39%,
+          hsl(225deg 56% 62%) 46%,
+          hsl(224deg 60% 67%) 54%,
+          hsl(223deg 65% 72%) 61%,
+          hsl(221deg 72% 76%) 69%,
+          hsl(219deg 83% 81%) 79%,
+          hsl(216deg 100% 85%) 100%);
+      background-size: 400%;
+      animation: shiftRight linear 3s alternate infinite;
+    }
+
+    @keyframes shiftRight {
+      100% {
+        background-position: 100%;
+      }
+    }
   </style>
   <link rel="icon" href="data:;base64,=">
   <title>css-loaders</title>
@@ -105,6 +129,9 @@
     <p>
       <span class="inline-spinner"></span>Some p text next to an inline-spinner<span class="inline-spinner"></span>
     </p>
+
+    <h1>An &lt;hr&gt; divider with a subtle gradient animation:</h1>
+    <hr class="gradient-divider">
   </main>
 </body>
 
