@@ -22,17 +22,19 @@
       margin-inline: auto;
     }
 
-    .skeleton-line {
-      block-size: 1rem;
-      margin-block: 1rem;
-      animation: shimmer 1s infinite alternate;
-      background: hsl(0deg 0% 50%);
-    }
+    /* Skeleton loaders */
 
     @keyframes shimmer {
       100% {
         background: hsl(0deg 0% 85%);
       }
+    }
+
+    .skeleton-line {
+      block-size: 1rem;
+      margin-block: 1rem;
+      animation: shimmer 1s infinite alternate;
+      background: hsl(0deg 0% 50%);
     }
 
     .skeleton-inline-container {
@@ -61,6 +63,14 @@
       background: hsl(0deg 0% 50%);
     }
 
+    /* Spinners */
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
     .inline-spinner {
       display: inline-block;
       box-sizing: border-box;
@@ -72,9 +82,11 @@
       animation: spin 1s infinite;
     }
 
-    @keyframes spin {
+    /* Dividers */
+
+    @keyframes shiftRight {
       100% {
-        transform: rotate(360deg);
+        background-position: 100%;
       }
     }
 
@@ -94,12 +106,6 @@
           hsl(216deg 100% 85%) 100%);
       background-size: 400%;
       animation: shiftRight 3s linear infinite alternate;
-    }
-
-    @keyframes shiftRight {
-      100% {
-        background-position: 100%;
-      }
     }
   </style>
   <link rel="icon" href="data:;base64,=">
