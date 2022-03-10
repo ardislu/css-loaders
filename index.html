@@ -98,6 +98,20 @@
       animation: spin 0.2s linear 1;
     }
 
+    /* SVG animations */
+
+    .squiggly-line {
+      display: block;
+      block-size: 24px;
+      inline-size: 100%;
+    }
+
+    .bricks {
+      display: block;
+      block-size: 155px;
+      inline-size: 100%;
+    }
+
     /* Dividers */
 
     @keyframes shiftRight {
@@ -164,6 +178,44 @@
           </svg>
         </button>
       </p>
+    </section>
+
+    <section>
+      <h1>SVG animations</h1>
+
+      <p>Squiggly line:</p>
+      <svg class="squiggly-line">
+        <defs>
+          <pattern id="squiggle" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M0,12 Q6,0 12,12 Q18,24 24,12" fill="none" stroke="#000" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#squiggle)">
+          <animateTransform attributeName="transform" type="translateX" from="0" to="24" dur="1s"
+            repeatCount="indefinite" />
+        </rect>
+        <rect width="24" height="100%" fill="url(#squiggle)">
+          <animateTransform attributeName="transform" type="translateX" from="-24" to="0" dur="1s"
+            repeatCount="indefinite" />
+        </rect>
+      </svg>
+
+      <p>Bricks:</p>
+      <svg class="bricks">
+        <defs>
+          <pattern id="brick" width="42" height="44" patternUnits="userSpaceOnUse">
+            <path d="M0,0 H42V44H0V0 M42,1 H1V22H42 M0,23 H21V44H0 M42,23 H22V44H42" fill="#000" fill-rule="evenodd" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#brick)">
+          <animateTransform attributeName="transform" type="translateX" from="0" to="42" dur="1s"
+            repeatCount="indefinite" />
+        </rect>
+        <rect width="42" height="100%" fill="url(#brick)">
+          <animateTransform attributeName="transform" type="translateX" from="-42" to="0" dur="1s"
+            repeatCount="indefinite" />
+        </rect>
+      </svg>
     </section>
 
     <section>
