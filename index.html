@@ -40,7 +40,7 @@
     .skeleton-inline-container {
       display: grid;
       grid-template-columns: 12% 1fr;
-      grid-template-rows: repeat(15, 1em);
+      grid-template-rows: repeat(5, 1em);
       gap: .15em;
     }
 
@@ -53,13 +53,6 @@
     }
 
     .skeleton-inline-line {
-      animation: shimmer 1s infinite alternate;
-      background: hsl(0deg 0% 50%);
-    }
-
-    .skeleton-inline-block {
-      grid-column-end: span 2;
-      grid-row-end: span 10;
       animation: shimmer 1s infinite alternate;
       background: hsl(0deg 0% 50%);
     }
@@ -163,7 +156,6 @@
         <span class="skeleton-inline-line"></span>
         <span class="skeleton-inline-line"></span>
         <span class="skeleton-inline-line"></span>
-        <span class="skeleton-inline-block"></span>
       </div>
     </section>
 
