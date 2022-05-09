@@ -38,27 +38,28 @@
     }
 
     .skeleton-inline-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: 12% 1fr;
+      grid-template-rows: repeat(15, 1em);
+      gap: .15em;
     }
 
-    .skeleton-inline-square {
-      inline-size: 1em;
-      block-size: 1em;
-      animation: shimmer 1s infinite alternate;
-      background: hsl(0deg 0% 50%);
-    }
-
-    .skeleton-inline-circle {
-      inline-size: 1em;
-      block-size: 1em;
-      border-radius: 1em;
+    .skeleton-inline-portrait {
+      grid-row-end: span 5;
+      aspect-ratio: 1;
+      border-radius: 5em;
       animation: shimmer 1s infinite alternate;
       background: hsl(0deg 0% 50%);
     }
 
     .skeleton-inline-line {
-      flex-grow: 1;
-      block-size: 1em;
+      animation: shimmer 1s infinite alternate;
+      background: hsl(0deg 0% 50%);
+    }
+
+    .skeleton-inline-block {
+      grid-column-end: span 2;
+      grid-row-end: span 10;
       animation: shimmer 1s infinite alternate;
       background: hsl(0deg 0% 50%);
     }
@@ -154,11 +155,15 @@
       <p>A block skeleton line loader:</p>
       <div class="skeleton-line"></div>
 
-      <p>An inline skeleton square, circle, and line loader:</p>
+      <p>Multiple skeleton loaders in a block:</p>
       <div class="skeleton-inline-container">
-        <span class="skeleton-inline-square"></span>
-        <span class="skeleton-inline-circle"></span>
+        <span class="skeleton-inline-portrait"></span>
         <span class="skeleton-inline-line"></span>
+        <span class="skeleton-inline-line"></span>
+        <span class="skeleton-inline-line"></span>
+        <span class="skeleton-inline-line"></span>
+        <span class="skeleton-inline-line"></span>
+        <span class="skeleton-inline-block"></span>
       </div>
     </section>
 
