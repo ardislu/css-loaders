@@ -138,7 +138,7 @@
       padding: 16px;
     }
 
-    .card-content {
+    .card-content.rainbow-border {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -196,6 +196,42 @@
       height: calc(100% - 4px);
       background: white;
       border-radius: 8px;
+    }
+
+    .card.hover-detail {
+      block-size: 148px;
+      background: hsl(0deg 0% 98%);
+      border: 1px solid hsl(0deg 0% 70%);
+      border-radius: 12px;
+      position: relative;
+      transition: filter 800ms;
+    }
+
+    .card.hover-detail:hover,
+    .card.hover-detail:focus-within {
+      filter: brightness(93%);
+      transition: filter 400ms;
+    }
+
+    .card-content.hover-detail {
+      block-size: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .card-content.hover-detail p {
+      margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 2000ms;
+    }
+
+    .card.hover-detail:hover p,
+    .card.hover-detail:focus-within p {
+      max-height: 100%;
+      transition: max-height 1700ms;
     }
   </style>
   <link rel="icon" href="data:,">
@@ -290,6 +326,13 @@
         <div class="card-content rainbow-border">
           <h2>Rainbow border card</h2>
           <p>This card's border will fill with a rainbow when the card is hovered or focused.</p>
+        </div>
+      </div>
+
+      <div class="card hover-detail">
+        <div class="card-content hover-detail">
+          <h2>Hover detail card</h2>
+          <p>This card's detail will rise from the bottom when the card is hovered or focused.</p>
         </div>
       </div>
     </section>
