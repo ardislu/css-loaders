@@ -130,6 +130,73 @@
       background-size: 400%;
       animation: shiftRight 3s linear infinite alternate;
     }
+
+    /* Card hovers */
+
+    .card {
+      inline-size: min(100% - 2rem, 400px);
+      padding: 16px;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card.rainbow-border {
+      border-radius: 12px;
+      border: 1px solid hsl(0deg 0% 70%);
+      position: relative;
+      transition: border-color 1400ms;
+    }
+
+    .card.rainbow-border:hover,
+    .card.rainbow-border:focus-within {
+      border-color: transparent;
+      transition: border-color 600ms;
+    }
+
+    .card.rainbow-border::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: conic-gradient(hsl(360deg 80% 50%),
+          hsl(315deg 80% 50%),
+          hsl(270deg 80% 50%),
+          hsl(225deg 80% 50%),
+          hsl(180deg 80% 50%),
+          hsl(135deg 80% 50%),
+          hsl(90deg 80% 50%),
+          hsl(45deg 80% 50%),
+          hsl(0deg 80% 50%));
+      clip-path: circle(0% at 5% 15%);
+      transition: clip-path 1200ms;
+    }
+
+    .card.rainbow-border:hover::before,
+    .card.rainbow-border:focus-within::before {
+      clip-path: circle(150% at 5% 15%);
+      transition: clip-path 800ms;
+    }
+
+    .card-content.rainbow-border::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      background: white;
+      border-radius: 8px;
+    }
   </style>
   <link rel="icon" href="data:,">
   <title>css-loaders</title>
@@ -215,7 +282,17 @@
       <p>Small divider with a subtle gradient animation:</p>
       <hr class="gradient-divider">
     </section>
-  </main>
+
+    <section>
+      <h1>Card hovers</h1>
+
+      <div class="card rainbow-border">
+        <div class="card-content rainbow-border">
+          <h2>Rainbow border card</h2>
+          <p>This card's border will fill with a rainbow when the card is hovered or focused.</p>
+        </div>
+      </div>
+    </section>
 </body>
 
 </html>
