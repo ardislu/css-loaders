@@ -303,6 +303,22 @@
       transform: translateX(4px);
       transition: transform 200ms;
     }
+
+    /* Link hovers */
+
+    .thick-underline {
+      font-size: 2rem;
+      color: inherit;
+      text-decoration: underline;
+      transition: color 600ms;
+    }
+
+    .thick-underline:hover,
+    .thick-underline:focus {
+      color: hsl(216deg 80% 40%);
+      text-decoration-thickness: 0.2em;
+      transition: color 200ms;
+    }
   </style>
   <link rel="icon" href="data:,">
   <title>css-loaders</title>
@@ -421,6 +437,12 @@
         Arrow movement
         <span>→</span>
       </button>
+    </section>
+
+    <section>
+      <h1>Link hovers</h1>
+
+      <a href="https://example.com" class="thick-underline">Thick underline</a>
     </section>
 </body>
 
