@@ -304,6 +304,39 @@
       transition: transform 200ms;
     }
 
+    .gradient-shadow {
+      position: relative;
+    }
+
+    .gradient-shadow::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transform: translate(-2px, -2px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      border-radius: 18px;
+      background: conic-gradient(hsl(360deg 80% 50%),
+          hsl(315deg 80% 50%),
+          hsl(270deg 80% 50%),
+          hsl(225deg 80% 50%),
+          hsl(180deg 80% 50%),
+          hsl(135deg 80% 50%),
+          hsl(90deg 80% 50%),
+          hsl(45deg 80% 50%),
+          hsl(0deg 80% 50%));
+      filter: drop-shadow(0 0 8px hsl(216deg 100% 50% / 0.5));
+      opacity: 0;
+      transition: opacity 600ms;
+    }
+
+    .gradient-shadow:hover::after {
+      opacity: 1;
+      transition: opacity 400ms;
+    }
+
     /* Link hovers */
 
     .thick-underline {
@@ -437,6 +470,8 @@
         Arrow movement
         <span>→</span>
       </button>
+
+      <button class="gradient-shadow">Gradient drop shadow</button>
     </section>
 
     <section>
