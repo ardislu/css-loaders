@@ -294,12 +294,14 @@
       cursor: pointer;
     }
 
-    button span {
+    .arrow-movement::after {
+      content: "→";
       display: inline-block;
+      margin-inline-start: 4px;
       transition: transform 400ms;
     }
 
-    :is(button:hover, button:focus) span {
+    :is(.arrow-movement:hover, .arrow-movement:focus)::after {
       transform: translateX(4px);
       transition: transform 200ms;
     }
@@ -466,10 +468,7 @@
     <section>
       <h1>Button hovers</h1>
 
-      <button>
-        Arrow movement
-        <span>→</span>
-      </button>
+      <button class="arrow-movement">Arrow movement</button>
 
       <button class="gradient-shadow">Gradient drop shadow</button>
     </section>
