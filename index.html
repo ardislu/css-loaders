@@ -354,6 +354,34 @@
       text-decoration-thickness: 0.2em;
       transition: color 200ms;
     }
+
+    .gradient-shift {
+      font-size: 1.5rem;
+      font-weight: 500;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(90deg,
+          hsl(360deg 80% 50%),
+          hsl(315deg 80% 50%),
+          hsl(270deg 80% 50%),
+          hsl(225deg 80% 50%),
+          hsl(180deg 80% 50%),
+          hsl(135deg 80% 50%),
+          hsl(90deg 80% 50%),
+          hsl(45deg 80% 50%),
+          hsl(0deg 80% 50%) 50%,
+          hsl(216deg 50% 50%) 50%);
+      background-size: 200% 100%;
+      background-position: 100% 0%;
+      transition: background-position 800ms;
+    }
+
+    .gradient-shift:hover,
+    .gradient-shift:focus {
+      background-position: 0% 0%;
+      transition: background-position 400ms;
+    }
   </style>
   <link rel="icon" href="data:,">
   <title>css-loaders</title>
@@ -477,6 +505,8 @@
       <h1>Link hovers</h1>
 
       <a href="https://example.com" class="thick-underline">Thick underline</a>
+
+      <a href="https://example.com" class="gradient-shift">Gradient shift</a>
     </section>
 </body>
 
