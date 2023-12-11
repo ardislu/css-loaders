@@ -69,7 +69,7 @@
 
     @keyframes spin {
       100% {
-        transform: rotate(360deg);
+        rotate: 360deg;
       }
     }
 
@@ -298,12 +298,12 @@
       content: "→";
       display: inline-block;
       margin-inline-start: 4px;
-      transition: transform 400ms;
+      transition: translate 400ms;
     }
 
     :is(.arrow-movement:hover, .arrow-movement:focus)::after {
-      transform: translateX(4px);
-      transition: transform 200ms;
+      translate: 4px;
+      transition: translate 200ms;
     }
 
     .gradient-shadow {
@@ -316,7 +316,7 @@
       z-index: -1;
       top: 0;
       left: 0;
-      transform: translate(-2px, -2px);
+      translate: -2px -2px;
       width: calc(100% + 4px);
       height: calc(100% + 4px);
       border-radius: 18px;
