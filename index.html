@@ -284,6 +284,20 @@
       transition: max-height 1700ms;
     }
 
+    .card.hover-grow {
+      margin-block: 8px;
+      border: 1px solid hsl(0deg 0% 70%);
+      border-radius: 12px;
+      will-change: transform;
+      transition: scale 400ms;
+    }
+
+    .card.hover-grow:hover,
+    .card.hover-grow:focus-within {
+      scale: 105%;
+      transition: scale 200ms;
+    }
+
     /* Button hovers */
 
     button {
@@ -523,6 +537,11 @@
           <h2>Hover detail card</h2>
           <p>This card's detail will rise from the bottom when the card is hovered or focused.</p>
         </div>
+      </div>
+
+      <div class="card hover-grow">
+        <h2>Grow on hover</h2>
+        <p>This card will grow larger when the card is hovered or focused.</p>
       </div>
     </section>
 
