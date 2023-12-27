@@ -354,6 +354,41 @@
       transition: opacity 400ms;
     }
 
+    @keyframes radiate {
+      100% {
+        scale: 103%;
+      }
+    }
+
+    .radiating-shadow {
+      position: relative;
+    }
+
+    .radiating-shadow::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      translate: -2px -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      border-radius: 18px;
+      background: radial-gradient(ellipse at center,
+          hsl(216deg 70% 30% / 0.3),
+          hsl(216deg 60% 40% / 0.4),
+          hsl(216deg 50% 50% / 0.5),
+          hsl(216deg 20% 80% / 0.8));
+      opacity: 0;
+      transition: opacity 600ms;
+      animation: radiate 1s infinite alternate;
+    }
+
+    :is(.radiating-shadow:hover, .radiating-shadow:focus)::after {
+      opacity: 1;
+      transition: opacity 400ms;
+    }
+
     .gradient-fill {
       background: transparent;
       overflow: hidden;
@@ -551,6 +586,8 @@
       <button class="arrow-movement">Arrow movement</button>
 
       <button class="gradient-shadow">Gradient drop shadow</button>
+
+      <button class="radiating-shadow">Radiating drop shadow</button>
 
       <button class="gradient-fill">Gradient fill</button>
     </section>
