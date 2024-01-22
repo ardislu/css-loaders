@@ -321,6 +321,19 @@
       transition: translate 200ms;
     }
 
+    .arrow-movement-2::after {
+      content: "→";
+      display: inline-block;
+      margin-inline-start: 4px;
+      rotate: -45deg;
+      transition: rotate 400ms;
+    }
+
+    :is(.arrow-movement-2:hover, .arrow-movement-2:focus)::after {
+      rotate: 0deg;
+      transition: rotate 200ms;
+    }
+
     .gradient-shadow {
       position: relative;
     }
@@ -584,6 +597,8 @@
       <h1>Button hovers</h1>
 
       <button class="arrow-movement">Arrow movement</button>
+
+      <button class="arrow-movement-2">Arrow movement 2</button>
 
       <button class="gradient-shadow">Gradient drop shadow</button>
 
