@@ -298,6 +298,23 @@
       transition: scale 200ms;
     }
 
+    .card.text-focus {
+      margin-block: 8px;
+      border: 1px solid hsl(0deg 0% 70%);
+      border-radius: 12px;
+    }
+
+    .text-focus p {
+      filter: blur(4px);
+      transition: filter 400ms;
+    }
+
+    .card.text-focus:hover p,
+    .card.text-focus:focus-within p {
+      filter: blur(0);
+      transition: filter 200ms;
+    }
+
     /* Button hovers */
 
     button {
@@ -591,6 +608,12 @@
         <h2>Grow on hover</h2>
         <p>This card will grow larger when the card is hovered or focused.</p>
       </div>
+
+      <div class="card text-focus">
+        <h2>Text focus</h2>
+        <p>The text inside this card will become more "in-focus" when this card is hovered or focused.</p>
+      </div>
+
     </section>
 
     <section>
