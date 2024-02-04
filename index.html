@@ -315,6 +315,21 @@
       transition: filter 200ms;
     }
 
+    .card.big-box-shadow {
+      margin-block: 8px;
+      border: 1px solid hsl(0deg 0% 70%);
+      border-radius: 12px;
+      transition: padding 400ms, border 400ms, box-shadow 400ms;
+    }
+
+    .card.big-box-shadow:hover,
+    .card.big-box-shadow:focus-within {
+      border: 1px solid black;
+      box-shadow: 10px 10px black;
+      padding: 16px 24px 24px 16px;
+      transition: padding 200ms, border 200ms, box-shadow 200ms;
+    }
+
     /* Button hovers */
 
     button {
@@ -614,6 +629,10 @@
         <p>The text inside this card will become more "in-focus" when this card is hovered or focused.</p>
       </div>
 
+      <div class="card big-box-shadow">
+        <h2>Big box shadow</h2>
+        <p>A big box shadow will appear around this card when this card is hovered or focused.</p>
+      </div>
     </section>
 
     <section>
