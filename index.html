@@ -320,6 +320,39 @@
       transition: padding 200ms, border 200ms, box-shadow 200ms;
     }
 
+    .card.peeking-rainbow-background {
+      position: relative;
+    }
+
+    .card.peeking-rainbow-background::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      bottom: calc(100% - 10px);
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      background-image: linear-gradient(transparent, white),
+        linear-gradient(90deg,
+          hsl(360deg 80% 50% / 0.25),
+          hsl(315deg 80% 50% / 0.25),
+          hsl(270deg 80% 50% / 0.25),
+          hsl(225deg 80% 50% / 0.25),
+          hsl(180deg 80% 50% / 0.25),
+          hsl(135deg 80% 50% / 0.25),
+          hsl(90deg 80% 50% / 0.25),
+          hsl(45deg 80% 50% / 0.25),
+          hsl(0deg 80% 50% / 0.25)
+        );
+        transition: bottom 400ms;
+    }
+
+    .card.peeking-rainbow-background:hover::before {
+      bottom: 0;
+      transition: bottom 200ms;
+    }
+
     /* Button hovers */
 
     button {
@@ -622,6 +655,11 @@
       <div class="card big-box-shadow">
         <h2>Big box shadow</h2>
         <p>A big box shadow will appear around this card when this card is hovered or focused.</p>
+      </div>
+
+      <div class="card peeking-rainbow-background">
+        <h2>Peeking rainbow background</h2>
+        <p>This card has a subtle rainbow gradient at the top border which will expand on hover or focus.</p>
       </div>
     </section>
 
