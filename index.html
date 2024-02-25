@@ -348,7 +348,7 @@
         transition: bottom 400ms;
     }
 
-    .card.peeking-rainbow-background:hover::before {
+    .card.peeking-rainbow-background:is(:hover, :focus-within)::before {
       bottom: 0;
       transition: bottom 200ms;
     }
