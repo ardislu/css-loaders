@@ -353,6 +353,34 @@
       transition: bottom 200ms;
     }
 
+    .card.pattern-background {
+      --s: 85px;
+      --c1: #fff;
+      --c2: hsl(216deg 10% 90% / 0.3);
+      --_g: #0000 8%, var(--c1) 0 17%, #0000 0 58%;
+      background:
+        linear-gradient(135deg, #0000 20.5%, var(--c1) 0 29.5%, #0000 0) 0 calc(var(--s)/4),
+        linear-gradient(45deg, var(--_g)) calc(var(--s)/2) 0,
+        linear-gradient(135deg, var(--_g), var(--c1) 0 67%, #0000 0),
+        linear-gradient(45deg, var(--_g), var(--c1) 0 67%, #0000 0 83%, var(--c1) 0 92%, #0000 0),
+        var(--c2);
+      background-size: var(--s) var(--s);
+      transition: background-color 400ms;
+
+      & h2,
+      p {
+        background: white;
+        padding: 8px;
+        margin-inline: -8px;
+        border-radius: 4px;
+      }
+    }
+
+    .card.pattern-background:is(:hover, :focus-within) {
+      --c2: hsl(216deg 100% 50% / 0.15);
+      transition: background-color 200ms;
+    }
+
     /* Button hovers */
 
     button {
@@ -660,6 +688,11 @@
       <div class="card peeking-rainbow-background">
         <h2>Peeking rainbow background</h2>
         <p>This card has a subtle rainbow gradient at the top border which will expand on hover or focus.</p>
+      </div>
+
+      <div class="card pattern-background">
+        <h2>Pattern background</h2>
+        <p>This card has a subtle pattern in the background which will become more prominent on hover or focus.</p>
       </div>
     </section>
 
